@@ -1,0 +1,22 @@
+import java.util.*;
+
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+
+        Scanner s = new Scanner(System.in);
+        int testCases = Integer.parseInt(s.nextLine());     
+        while(testCases>0){
+            int SH = s.nextInt();
+            int SM = s.nextInt();
+            int EH = s.nextInt();
+            int EM = s.nextInt();
+            if(EM<SM){
+                EM=EM+60;
+                EH--;
+            }
+            System.out.println((EH-SH) +" "+ (EM-SM));
+            testCases--;
+        }            
+    }
+}

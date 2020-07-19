@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
+
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+
+        
+        Scanner sc = new Scanner(System.in);
+        StringBuilder name = new StringBuilder();
+        String name1 = sc.nextLine();                
+        name.append(name1);
+        for (int i = 0; i < name.length() ; i ++){
+            if(name.charAt(i) >= 'A' && name.charAt(i) <= 'Z'){
+                    char temp = (char) (name.charAt(i) + 'a' - 'A');
+                    name.setCharAt(i,temp);
+            }else if(name.charAt(i) >= 'a' && name.charAt(i) <= 'z'){
+                    char temp1 = (char) (name.charAt(i) + 'A' - 'a');
+                    name.setCharAt(i,temp1);
+            }
+        }
+        System.out.println(name);               
+
+
+    }
+}

@@ -1,0 +1,41 @@
+
+import java.util.*;
+
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner s = new Scanner(System.in);
+        int testCases = Integer.parseInt(s.nextLine());
+        for(int i = 0 ; i < testCases ; i ++){
+            int a = s.nextInt();
+            int b = s.nextInt();
+            int c = s.nextInt();
+            int temp = 0;
+            if(b - a == c - b){
+                System.out.println("0");
+            }else{
+                int a1 = b - a;
+                int b1 = c - b;
+                if(a1 < 0 && b1 < 0 || a1 > 0 && b1 > 0){
+                    temp = (a1 - b1)/2;                 
+                }else{
+                    if(a1 < 0 && b1 >0){
+                        a1 = a1 * -1;
+                        temp = (a1 + b1)/2;
+                    }else if(b1 < 0 && a1 >0){
+                        b1 = b1 * -1;
+                        temp = (a1 + b1)/2;
+                    }
+                }
+                if(temp < 0){
+                        temp = temp * -1;
+                }if((a1 + b1)%2!=0){
+                    temp++;
+                }
+
+
+                System.out.println(temp);
+            }
+        }     
+    }
+}

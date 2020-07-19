@@ -1,0 +1,28 @@
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner s = new Scanner(System.in);
+        String code = s.nextLine();
+        if (code.length()!= 9){
+            System.out.println("invalid");
+        }else if(!checkSumEven(code.charAt(0),code.charAt(1)) || !checkSumEven(code.charAt(3),code.charAt(4)) || !checkSumEven(code.charAt(4),code.charAt(5)) ||!checkSumEven(code.charAt(7),code.charAt(8)) ){
+            System.out.println("invalid");
+        }else if(code.charAt(2) == 'A' || code.charAt(2) == 'E' || code.charAt(2) == 'I' || code.charAt(2) == 'O' || code.charAt(2) == 'U' || code.charAt(2) == 'Y'){
+            System.out.println("invalid");
+        }else if(code.charAt(6) != '-'){
+            System.out.println("invalid");
+        }else{
+            System.out.println("valid");
+        }
+    }
+    public static boolean checkSumEven(char a, char b){
+       int a1 = Character.getNumericValue(a);
+       int b1 = Character.getNumericValue(b);
+        if ((a1+b1) % 2 == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}

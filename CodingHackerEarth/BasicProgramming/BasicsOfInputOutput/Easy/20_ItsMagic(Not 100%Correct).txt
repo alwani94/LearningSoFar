@@ -1,0 +1,40 @@
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner s = new Scanner(System.in);
+        int N = Integer.parseInt(s.nextLine());
+        int[] a = new int[N];
+        int sum = 0;
+        int index = -1;
+        for(int i = 0; i < N ; i++){
+            a[i] = s.nextInt();
+            sum = sum + a[i];
+        }
+        if(sum%7 != 0){
+        int rem = sum%7;
+        for(int j = N-1; j >= 0 ; j--){
+            if(a[j] == rem){
+                index = j;
+            }
+        }
+        }else{
+            int temp = 0;
+            for(int j = 0; j < N ; j++){
+                if(a[j]%7 == 0){
+                    index = j;
+                    temp = a[j];
+                    if(temp > a[j]){
+                        temp = a[j];
+                        index = j;
+                        if(temp == 7){
+                            index = j;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println(index);    
+    }
+}

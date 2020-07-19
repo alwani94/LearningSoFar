@@ -1,0 +1,20 @@
+
+import java.util.*;
+import java.lang.Math;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+
+        Scanner s = new Scanner(System.in);
+        int size = Integer.parseInt(s.nextLine());
+        double answer = 1;
+        int newAnswer = 0;
+        int[] a1 = new int[size];
+        for(int i = 0; i < a1.length ; i++){
+            a1[i] = s.nextInt();
+            answer = (answer * a1[i])%((Math.pow(10,9))+(7));
+        }
+        newAnswer = (int)answer;
+        System.out.println(newAnswer);
+    }
+}

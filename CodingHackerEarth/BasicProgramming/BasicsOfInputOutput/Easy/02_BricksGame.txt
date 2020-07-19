@@ -1,0 +1,37 @@
+
+import java.util.*;
+
+
+class TestClass {
+
+    public static void main(String args[] ) throws Exception {
+        Scanner s = new Scanner(System.in);
+        int bricks = Integer.parseInt(s.nextLine());
+        int C_bricks = bricks;
+        for(int i = 1; i <= bricks ; i++){
+            if(C_bricks >= i){
+                C_bricks = C_bricks - i;
+                //System.out.println("Inside Patlu " +C_bricks+ "   "+ i);
+            }else if(C_bricks <= i*2){
+                System.out.println("Patlu");
+                break;
+            }else{//i
+                System.out.println("Patlu");
+                //System.out.println("Inside Patlu 1 " +C_bricks+ "   "+ i);
+                break;
+            }
+            if(C_bricks >= 2*i){
+                 C_bricks = C_bricks - 2*i;
+                 //System.out.println("Inside Motu " +C_bricks+ "   "+ i*2);
+            }else if(C_bricks <= i){
+                System.out.println("Motu");
+                break;
+            }else{
+                System.out.println("Motu");
+               // System.out.println("Inside Motu 1 " +C_bricks+ "   "+ i);
+                break;
+            }
+        }
+
+    }
+}

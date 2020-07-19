@@ -1,0 +1,22 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner s = new Scanner(System.in);
+        int steps = Integer.parseInt(s.nextLine());   
+        while(steps > 0){
+            printVLine();
+            printHLine();
+            steps--;
+        }
+            printVLine();
+    }
+    public static void printVLine(){
+            System.out.print("*   ");
+            System.out.println("*");
+            System.out.print("*   ");
+            System.out.println("*");            
+    }
+    public static void printHLine(){
+            System.out.println("*****");
+    }
+}

@@ -1,0 +1,24 @@
+
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        
+        Scanner s = new Scanner(System.in);
+        String zoos = s.nextLine();
+        int z=0 ,o=0;
+        for (int i = 0 ; i < zoos.length() ; i ++){
+            if(zoos.charAt(i) == 'z'){
+                z++;
+            }else if (zoos.charAt(i) == 'o'){
+                o++;
+            }
+        }
+        if(o/2 == z && o%2 == 0){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+
+
+    }
+}

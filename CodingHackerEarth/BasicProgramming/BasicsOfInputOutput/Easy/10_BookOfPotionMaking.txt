@@ -1,0 +1,24 @@
+
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+    
+        Scanner s = new Scanner(System.in);
+        String ISBN = s.nextLine();
+        int sum = 0;
+        if(ISBN.length() != 10){
+            System.out.println("Illegal ISBN");
+        }else{
+            for(int i = 0, j = 1; i < ISBN.length() ; i++, j++){
+                int temp = Character.getNumericValue(ISBN.charAt(i));
+                sum = sum + temp*j;
+            }
+            if(sum % 11 == 0){
+                System.out.println("Legal ISBN");
+            }else{
+                System.out.println("Illegal ISBN");
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+
+        Scanner s = new Scanner(System.in);
+        int testCases = Integer.parseInt(s.nextLine()); 
+        
+        while(testCases!=0){
+            int green = s.nextInt();
+            int purple = s.nextInt();
+            int g_count = 0;
+            int p_count = 0;
+            int participants = s.nextInt();
+                for(int i=0; i<participants; i++){
+                    int Q1 = s.nextInt();
+                    int Q2 = s.nextInt();
+                    //System.out.println(green +" "+ purple +" "+participants);
+                    if(Q1==1){
+                        g_count++;
+                    }
+                    if(Q2 == 1){
+                        p_count++;
+                    }   
+                }
+            if(g_count*green + p_count*purple < g_count*purple + p_count*green){
+                System.out.println(g_count*green + p_count*purple);
+            }else{
+                System.out.println(g_count*purple + p_count*green);
+            }
+            
+            testCases--;
+        }
+    }
+}

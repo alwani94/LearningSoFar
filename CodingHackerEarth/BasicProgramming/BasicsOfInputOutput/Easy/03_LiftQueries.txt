@@ -1,0 +1,38 @@
+
+import java.util.*;
+
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner s = new Scanner(System.in);
+        int testCases = Integer.parseInt(s.nextLine());
+        int A_location = 0;
+        int B_location = 7;   
+        for(int i= 0; i < testCases ; i++){
+            int U_location = Integer.parseInt(s.nextLine());
+            int Offset_A =  A_location - U_location ;
+            int Offset_B =  B_location - U_location;
+            if(0 > Offset_A){
+                 Offset_A = Offset_A * -1;
+            }
+            if(0 > Offset_B){
+                 Offset_B = Offset_A * -1;
+            }
+            if(Offset_A > Offset_B){
+                B_location = U_location;
+                System.out.println("B");
+            }else if(Offset_B > Offset_A){
+                A_location = U_location;
+                System.out.println("A");
+            }else if(Offset_B == Offset_A){
+                if(B_location < A_location){
+                    B_location = U_location;
+                    System.out.println("B");
+                }else if(A_location < B_location){
+                    A_location = U_location;
+                    System.out.println("A");
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int testCases = Integer.parseInt(sc.nextLine());
+        boolean isVowel = false;
+        boolean isVowelNext = false;
+        int count = 0;
+        for(int i = 0; i < testCases ; i ++){
+            int t_count = Integer.parseInt(sc.nextLine());
+            count = 0;
+            String s1 = sc.nextLine();
+           // System.out.println(s1);
+            for(int j = 0, k =1 ; k<t_count ; j++, k++){
+                //System.out.println(s1.charAt(j));
+                isVowel = isCharVowel(s1.charAt(j));
+                isVowelNext = isCharVowel(s1.charAt(k));
+                if(!isVowel && isVowelNext){
+                    count++;            
+                } 
+            }
+            System.out.println(count);
+            
+        }
+    }
+    public static boolean isCharVowel(char ch){
+        boolean isVowel = false;
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
+                        isVowel = true;       
+            }
+            return isVowel;
+    }
+}
