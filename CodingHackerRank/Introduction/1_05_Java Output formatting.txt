@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("================================");
+            for(int i=0;i<3;i++){
+                String s1=sc.next();
+                int x=sc.nextInt();
+                System.out.print(s1);
+                int space = s1.length();
+                for(int j=(15-space);j>0;j--){
+                    System.out.print(" ");
+                }
+
+                String formatted = String.format("%03d", x);
+                System.out.println(formatted);
+            }
+            System.out.println("================================");
+
+    }
+}
+
+
+

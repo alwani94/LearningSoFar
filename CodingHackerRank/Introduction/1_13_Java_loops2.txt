@@ -1,0 +1,35 @@
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        double sol;
+        int exp=0;
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+                //ArrayList<Integer> sol1 = new ArrayList<Integer>();
+                sol = a + b;
+                exp=(int)sol;
+                System.out.print(exp + " ");
+                //sol1.add(exp);
+                for (int k=1; k<n;k++){
+                    sol = sol + doPower(2,k) * b;
+                    exp=(int)sol;
+                    System.out.print(exp + " ");
+                    //sol1.add(exp); 
+                }
+            System.out.println();
+        }
+
+        
+        in.close(); 
+    }
+    public static double doPower(int b,int k){
+            return Math.pow(b, k);
+        }
+}
