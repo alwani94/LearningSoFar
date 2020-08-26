@@ -1,5 +1,6 @@
 package com.in28mins.microservices.currencyexchangeservice.controller;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import javax.persistence.Column;
@@ -21,7 +22,7 @@ public class ExchangeValue {
 	private String to;
 	
 	@Column(name="exchange_value")
-	private BigInteger value;
+	private BigDecimal value;
 	
 	@Transient
 	private int port;
@@ -29,16 +30,27 @@ public class ExchangeValue {
 	
 	
 	
-	public ExchangeValue() {
-		super();
-	}
-	public ExchangeValue(long id, String from, String to, BigInteger value) {
+	public ExchangeValue(long id, String from, String to, BigDecimal value, int port) {
 		super();
 		this.id = id;
 		this.from = from;
 		this.to = to;
 		this.value = value;
+		this.port = port;
 	}
+
+	public BigDecimal getValue() {
+		return value;
+	}
+
+	public void setValue(BigDecimal value) {
+		this.value = value;
+	}
+
+	public ExchangeValue() {
+		super();
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -57,12 +69,7 @@ public class ExchangeValue {
 	public void setTo(String to) {
 		this.to = to;
 	}
-	public BigInteger getValue() {
-		return value;
-	}
-	public void setValue(BigInteger value) {
-		this.value = value;
-	}
+
 	public int getPort() {
 		return port;
 	}

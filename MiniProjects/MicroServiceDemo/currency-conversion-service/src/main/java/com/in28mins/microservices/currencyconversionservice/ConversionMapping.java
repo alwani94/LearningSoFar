@@ -10,7 +10,7 @@ public class ConversionMapping {
 	
 	private String to;
 	
-	private BigDecimal conversionRate;
+	private BigDecimal value;
 	
 	private BigDecimal quantity;
 	
@@ -22,21 +22,37 @@ public class ConversionMapping {
 	
 	
 
-	public ConversionMapping() {
-		super();
-	}
-
-	public ConversionMapping(long id, String from, String to, BigDecimal conversionRate, BigDecimal quantity,
+	public ConversionMapping(long id, String from, String to, BigDecimal value, BigDecimal quantity,
 			BigDecimal totalAmountAfterConversion, int port) {
 		super();
 		this.id = id;
 		this.from = from;
 		this.to = to;
-		this.conversionRate = conversionRate;
+		this.value = value;
 		this.quantity = quantity;
 		this.totalAmountAfterConversion = totalAmountAfterConversion;
 		this.port = port;
 	}
+
+
+
+	public ConversionMapping() {
+		super();
+	}
+
+
+
+	public BigDecimal getValue() {
+		return value;
+	}
+
+
+
+	public void setValue(BigDecimal value) {
+		this.value = value;
+	}
+
+
 
 	public int getPort() {
 		return port;
@@ -70,13 +86,7 @@ public class ConversionMapping {
 		this.to = to;
 	}
 
-	public BigDecimal getConversionRate() {
-		return conversionRate;
-	}
 
-	public void setConversionRate(BigDecimal conversionRate) {
-		this.conversionRate = conversionRate;
-	}
 
 	public BigDecimal getQuantity() {
 		return quantity;
